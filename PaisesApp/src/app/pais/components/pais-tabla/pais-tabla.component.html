@@ -1,0 +1,24 @@
+<table class="table animate__animated animate__fadeIn">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Bandera</th>
+            <th>Nombre</th>
+            <th>Población</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pais of paises; let i = index">
+            <th>{{i+1}}</th>
+            <th>
+                <img class="small-flag" [src]="pais.flags.png" [alt]="pais.flags.alt">
+            </th>
+            <th>{{pais.capital}} , {{pais.name.common}}</th>
+            <th>{{pais.population | number}}</th>
+            <th>
+                <a [routerLink]="['/pais', pais.ccn3]" routerLinkActive="router-link-active" >Ver...</a>
+            </th>
+        </tr>
+    </tbody>
+</table>
